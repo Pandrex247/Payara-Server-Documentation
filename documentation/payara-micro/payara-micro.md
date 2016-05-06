@@ -641,6 +641,7 @@ Configuration Option | Description | Default Value
 `--autoBindHttp` | Enables auto-binding for the HTTP port | _false_
 `--autoBindSsl` | Enables auto-binding for the HTTPS port | _false_
 `--autoBindRange` | Sets the range for HTTP and HTTPS port auto-binding. | 5
+`--disablePhoneHome` | Disables _Phone Home_ activities for this instance | If not set, _Phone Home_ is active
 `--help` | Displays the configuration options and then exits. | If not set, this option is not used.
 
 ## 13.2 Payara Micro API
