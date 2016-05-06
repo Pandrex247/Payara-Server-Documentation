@@ -7,6 +7,7 @@
 * [4. Deploying Applications](#4-deploying-applications)
   * [4.1 Deploying an Application from the Command Line](#41-deploying-an-application-from-the-command-line)
     * [4.1.1 Deploying Multiple Applications from the Command Line](#411-deploying-multiple-applications-from-the-command-line)
+    * [4.1.2 Deploying Applications from a Maven Repository](#412-deploying-applications-from-a-maven-repository)
   * [4.2 Deploying Applications Programmatically](#42-deploying-applications-programmatically)
     * [4.2.1 Deploying an Application during Bootstrap](#421-deploying-an-application-programmatically-during-bootstrap)
       * [4.2.1.1 Deploying Multiple Applications Programmatically during Bootstrap](#4211-deploying-multiple-applications-programmatically-during-bootstrap)
@@ -156,6 +157,27 @@ Alternatively, you can use the `--deploymentDir` option. This option specifies a
 
 ```Shell
 java -jar payara-micro.jar --deploymentDir /home/user/deployments
+```
+
+### 4.1.2 Deploying Applications from a Maven repository
+You can deploy an application directly from a Maven repository using the `--deployFromGAV` option. This option accepts a comma separated string denoting a maven artefact's _groupId_, _artifactId_, and _version_ attributes.
+
+```Shell
+java -jar payara-micro.jar --deployFromGAV "fish.payara.examples,test,1.0-SNAPSHOT"
+```
+
+This option can be used multiple times, and in conjunction with the standard `--deploy` options, as described in section [4.1.1](#411-deploying-multiple-applications-from-the-command-line).
+
+By default, Payara Micro will only search for artefacts in the Maven Central repository. If you wish to search additional repositories, you can add them to the list of repositories to search with the `--additionalRepository` option:
+
+```Shell
+java -jar payara-micro.jar --deployFromGAV "fish.payara.examples,test,1.0-SNAPSHOT" --additionalRepository https://maven.java.net/content/repositories/promoted/
+```
+
+To search through multiple additional repositories, you can simply call the option multiple times:
+
+```Shell
+java -jar payara-micro.jar --deployFromGAV "fish.payara.examples,test,1.0-SNAPSHOT" --additionalRepository https://maven.java.net/content/repositories/promoted/ --additionalRepository https://raw.github.com/payara/Payara_PatchedProjects/master/
 ```
 
 ## 4.2 Deploying Applications Programmatically
