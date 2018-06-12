@@ -39,7 +39,7 @@ In-line with our support for link:documentation/microprofile/opentracing.adoc[Mi
 
 In a practical sense, this means that you can instrument your code using either the new `@Traced` annotation, or by injecting and using an OpenTracing Tracer via CDI. For full details, see the link:documentation/microprofile/opentracing.adoc[MicroProfile OpenTracing] and http://opentracing.io/documentation/[OpenTracing.io] documentation. The https://github.com/opentracing/opentracing-java/blob/release-0.30.0/README.md[OpenTracing Java GitHub] page also has some useful information about using the OpenTracing API.
 
-NOTE: The new MicroProfile `@Traced` annotation replaces the Payara Server & Micro specific annotation provided previously, which will require you to either remove or refactor any code instrumented with the old annotation. The new annotation's canonical name is `org.eclipse.microprofile.opentracing.Traced`.
+NOTE: The new MicroProfile `@Traced` annotation replaces the Payara Server & Micro specific annotation provided previously, which will require you to either remove or refactor any code instrumented with the old annotation. The new annotation's canonical name is `org.eclipse.microprofile.opentracing.Traced`: no further changes should be required on top of changing this package name.
 
 === API Version Implemented
 
